@@ -1,0 +1,23 @@
+1) Qual foi a causa da exceção?
+O Cliente tenta-se ligar ao servidor através de um porto incorrecto e não consegue.
+
+2) Que exceção é que foi lançada?
+Exception in thread "main" java.net.ConnectException: Connection refused: connect
+        at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+        at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:79)
+        at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+        at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+        at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+        at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172)
+        at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+        at java.net.Socket.connect(Socket.java:589)
+        at java.net.Socket.connect(Socket.java:538)
+        at java.net.Socket.<init>(Socket.java:434)
+        at java.net.Socket.<init>(Socket.java:211)
+        at example.SocketClient.main(SocketClient.java:32)
+
+3) Em que linha do código do cliente é que foi lançada a exceção?
+????
+
+4) Ou será um problema na configuração dos argumentos?
+Não, testei de várias formas e não foi esse o problema.
