@@ -1,0 +1,7 @@
+Exercicio da aula
+
+1) Modifique o cliente para enviar uma marca temporal (timestamp), seguido do texto.
+
+2) Modifique o servidor deverá validar se o timestamp e recente (< 50) e, caso seja, responder 0 (ok), senao responde -1 (erro).
+
+3) O cliente deve aguardar o resultado do servidor.
