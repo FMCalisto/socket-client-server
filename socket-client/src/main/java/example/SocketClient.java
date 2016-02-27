@@ -4,6 +4,12 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
+// imports for execise
+import java.io.DataInputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+
 
 public class SocketClient {
 
@@ -34,6 +40,17 @@ public class SocketClient {
 
         // Create stream to send data to server
         DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+
+        // Time in seconds
+        long actualTime = System.currentTimeMillis();
+        out.writeBytes(Long.toString(actualTime));
+        out.writeBytes("\n");
+
+        DataInputStream in = new DataInputStream(socket.getInputStream());
+        BufferedReader data = new BufferedReader(new InputStreamReader(in));
+
+        String answer = data.readLine();
+        System.out.println(answer);
 
         // Send text to server as bytes
         out.writeBytes(text);

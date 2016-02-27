@@ -6,6 +6,9 @@ import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+// imports for execise
+import java.io.DataOutputStream;
+
 
 public class SocketServer 
 {
@@ -32,6 +35,27 @@ public class SocketServer
 
         // Create stream to receive data from client
         BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+
+        /* ===================== */
+        // ex:
+        String clientTimeString = in.readLine();
+
+        long serverTime = System.currentTimeMillis();
+
+        System.out.println(clientTimeString);
+        System.out.println(serverTime);
+
+        long clientTime = Long.parseLong(clientTimeString);
+        DataOutputStream outChannel = new DataOutputStream(clientSocket.getOutputStream());
+        serverTime = serverTime + 50;
+
+        if((clientTime < (serverTime + 50)) || (clientTime > (serverTime - 50))) {
+            outChannel.writeBytes("0\n");
+        } else {
+            outChannel.writeBytes("-1\n");
+        }
+
+        /* ===================== */
 
         // Receive data until client closes the connection
         String response;
