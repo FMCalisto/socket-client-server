@@ -6,7 +6,7 @@ A socket is one end of a connection via a computer network. Currently, communica
 
 ===================================================
 
-SD Group 35
+Distributed Systems Group 35
 -------------------
 
 Daniel da Costa
